@@ -4,7 +4,6 @@
     $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $connect->exec("SET CHARACTER SET utf8");
 		
-		echo 'Connected to Database';
 	  } catch (PDOException $e) {
 		echo $e->getMessage();
 	 }
@@ -20,7 +19,19 @@
 	$pass = $data->pass;
 
 	$pass_crypt = sha1($pass);
-    $connect->query("INSERT INTO `usuarios` (`firstName`, `lastName`, `username`, `email`, `password`, `age`, `gender`) VALUES ('".$firstName."','".$lastName."','".$username."','".$email."','".$pass_crypt."','".$age."','".$gender."')") or die(mysql_error());
+	try{
+	$sql = "INSERT INTO `usuarios` (`firstName`, `lastName`, `username`, `email`, `password`, `age`, `gender`) VALUES ('".$firstName."','".$lastName."','".$username."','".$email."','".$pass_crypt."','".$age."','".$gender."')";
+	$connect->query($sql);
+		echo "OK";
+	}
+	catch(PDOException $e){
 
+		$datos = explode("'", $e);
+		echo $datos[1];
+		echo " ";
+		echo $datos[3];
+	;
+		exit;
+}
 	$connect = null;
 ?>
