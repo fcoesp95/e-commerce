@@ -17,61 +17,62 @@
 <!-- falta meter todo lo de ng-model -->
 
 
-  <!-- <div ng-app="sampleApp" ng-controller="AngularController">
+<!-- <div ng-app="sampleApp" ng-controller="AngularController">
 
     
     <div ng-include="'footer.html'"></div> -->
-  
-    <body class="bg-light">
-      <div ng-app="sampleApp" ng-controller="AngularController">
-      <div ng-include="'header.html'"></div>
 
-      <div class="container" id="container">
-        <div class="py-5 text-center">
-          
-          </div>
-  
-             <div class="col-md-12">
-            <h4 class="mb-3">Registrar</h4>
-            <form class="needs-validation" ng-submit="insertUser()" novalidate="">
-              <div class="row">
-                <div class="col-md-6 mb-3">
-                  <label for="firstName">Nombre</label>
-                  <input type="text" class="form-control" name="firstName" ng-model="firstName" value="" required="">
-                  <div class="invalid-feedback">
-                    Valid first name is required.
-                  </div>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label for="lastName">Apellido</label>
-                  <input type="text" class="form-control" name="lastName" ng-model="lastName" value="" required="">
-                  <div class="invalid-feedback">
-                    Valid last name is required.
-                  </div>
+<body class="bg-light">
+  <div ng-app="sampleApp" ng-controller="AngularController">
+    <div ng-include="'header.html'"></div>
+
+    <div class="container" id="container">
+      <div class="py-5 text-center">
+
+      </div>
+
+      <div class="col-md-12">
+        <div class="card">
+          <h4 class="mb-3">Registrar</h4>
+          <form class="needs-validation" ng-submit="insertUser()" class="box" novalidate="">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="firstName">Nombre</label>
+                <input type="text" class="form-control" name="firstName" ng-model="firstName" value="" required="">
+                <div class="invalid-feedback">
+                  Valid first name is required.
                 </div>
               </div>
-  
-              <div class="mb-3">
+              <div class="col-md-6 mb-3">
+                <label for="lastName">Apellido</label>
+                <input type="text" class="form-control" name="lastName" ng-model="lastName" value="" required="">
+                <div class="invalid-feedback">
+                  Valid last name is required.
+                </div>
+              </div>
+            </div>
+            <div class="row">
+
+              <div class="col-md-6 mb-3">
                 <label for="username">Nombre de usuario</label>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">@</span>
-                  </div>
+                <div class="input-">
                   <input type="text" class="form-control" name="username" ng-model="username" required="">
-                  <div class="invalid-feedback" style="width: 100%;">
+                  <div class="invalid-feedback">
                     Your username is required.
                   </div>
                 </div>
               </div>
-  
-              <div class="mb-3">
+              <div class="col-md-6 mb-3">
                 <label for="email">Email</span></label>
-                <input type="email" class="form-control" name="email" ng-model="email" placeholder="you@example.com" required="">
+                <input type="email" class="form-control" name="email" ng-model="email" placeholder="you@example.com"
+                  required="">
                 <div class="invalid-feedback">
                   Please enter a valid email.
                 </div>
               </div>
-              <div class="mb-3">
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
                 <label for="pass">Password</span></label>
                 <input type="password" class="form-control" name="pass" ng-model="pass" required="">
                 <div class="invalid-feedback">
@@ -79,53 +80,58 @@
                 </div>
               </div>
 
-             <!--- <div class="mb-3">
+              <div class="col-md-6 mb-3">
                 <label for="pass">Repeat Password</span></label>
-                <input type="password" class="form-control" name="pass" ng-model="rep-pass" compare-to="pass" required="">
+                <input type="password" class="form-control" name="pass" ng-model="rep_pass" required="">
                 <div class="invalid-feedback">
                   Please enter a valid password.
                 </div>
               </div>
---->
+            </div>
 
-              <div class="mb-3">
+            <div class="row">
+              <div class="col-md-6 mb-3">
                 <label for="age">Edad</label>
                 <input type="number" class="form-control" name="age" ng-model="age" placeholder="" required="">
                 <div class="invalid-feedback">
                   Please enter your age.
                 </div>
               </div>
-              
-              
-  
-              <h4 class="mb-3">Genero</h4>
-  
-              <div class="d-block my-3">
-                <div>
-                  <label> 
-                    <input type="radio" ng-model="gender" value="man">
-                      Hombre</label><br>
 
-                  <label">
-                    <input type="radio" ng-model="gender" value="woman">
-                    Mujer</label>
+
+
+
+              <div class="col-md-6 mb-6">
+                <h3 class="mb-6">Genero</h3>
+
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="man" ng-model="gender">
+                  <label class="form-check-label" for="inlineRadio1">Hombre</label>
                 </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="woman" ng-model="gender">
+                  <label class="form-check-label" for="inlineRadio2">Mujer</label>
+                </div>
+
+
               </div>
-              
-              <hr class="mb-4">
-              <button class="btn btn-primary btn-lg btn-block" type="submit" ng-disabled="!email || !firstName || !lastName || !username || !age || !gender || !pass">Registrar</button>
-            </form>
-          </div>
+            </div>
+            <hr class="mb-4">
+            <button class="btn btn-primary btn-lg btn-block" type="submit"
+              ng-disabled="!email || !firstName || !lastName || !username || !age || !gender || !pass">Registrar</button>
+          </form>
         </div>
-
-
-        <div ng-include="'footer.html'"></div>
       </div>
+    </div>
+
+
+    <div ng-include="'footer.html'"></div>
   </div>
-      <!--  Bootstrap core JavaScript
+  </div>
+  <!--  Bootstrap core JavaScript
       ================================================== -->
-      <!-- Placed at the end of the document so the pages load faster -->
-     <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <!-- Placed at the end of the document so the pages load faster -->
+  <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
       <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
       <script src="../../assets/js/vendor/popper.min.js"></script>
       <script src="../../dist/js/bootstrap.min.js"></script>
@@ -153,6 +159,77 @@
         })();
       </script>
      -->
-  
-  </body>
+
+</body>
+
 </html>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: linear-gradient(to right, #b92b27, #1565c0)
+  }
+
+  .card {
+    margin-bottom: 20px;
+    border: none
+  }
+
+  .card {
+
+    background: #191919;
+    text-align: center;
+    transition: 0.25s;
+    margin-top: 100px
+  }
+
+  h4 {
+    text-transform: uppercase;
+    font-weight: 500;
+    color: white;
+
+  }
+
+  h3{
+    font-size: 16px;
+    color: white;
+  }
+  label {
+    color: white;
+
+  }
+
+  .card input[type="text"],
+  .card input[type="password"],
+  .card input[type="number"],
+  .card input[type="email"]   {
+    border: 0;
+    background: none;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 10px 10px;
+    width: 250px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s
+  }
+  .card input[type="text"]:hover,
+  .card input[type="password"]:hover,
+  .card input[type="number"]:hover,
+  .card input[type="email"]:hover   {
+    width: 300px;
+        border-color: #3606a5
+    }
+
+  .card input[type="text"]:focus,
+  .card input[type="password"]:focus,
+  .card input[type="number"]:focus,
+  .card input[type="email"]:focus   {
+    width: 300px;
+        border-color: #2ecc71
+    }
+
+</style>
